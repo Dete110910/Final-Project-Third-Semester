@@ -1,0 +1,53 @@
+[ {
+  "type" : "Food",
+  "name" : "Oreo",
+  "price" : 500.0
+}, {
+  "type" : "Food",
+  "name" : "Doritos",
+  "price" : 5000.0
+}, {
+  "type" : "Food",
+  "name" : "Kik Kat",
+  "price" : 12000.0
+}, {
+  "type" : "Food",
+  "name" : "M&M",
+  "price" : 4000.0
+}, {
+  "type" : "Food",
+  "name" : "TickTack",
+  "price" : 10000.0
+}, {
+  "type" : "Drinks",
+  "name" : "HIT Juice",
+  "price" : 1500.0
+}, {
+  "type" : "Drinks",
+  "name" : "Coca Cola",
+  "price" : 4000.0
+}, {
+  "type" : "Drinks",
+  "name" : "Pepsi",
+  "price" : 2000.0
+}, {
+  "type" : "Drinks",
+  "name" : "Vodka",
+  "price" : 100000.0
+}, {
+  "type" : "Cleaning products",
+  "name" : "Body Soap",
+  "price" : 2000.0
+}, {
+  "type" : "Cleaning products",
+  "name" : "Shampoo H&S",
+  "price" : 15000.0
+}, {
+  "type" : "Cleaning products",
+  "name" : "Toothpaste",
+  "price" : 4000.0
+}, {
+  "type" : "Cleaning products",
+  "name" : "Clorox",
+  "price" : 5000.0
+} ]

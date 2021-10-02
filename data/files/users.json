@@ -1,0 +1,37 @@
+[ {
+  "username" : "u",
+  "password" : "u",
+  "address" : "Cra 19 A Este"
+}, {
+  "username" : "user1",
+  "password" : "password1",
+  "address" : "Cra 19 A Este"
+}, {
+  "username" : "user2",
+  "password" : "password1",
+  "address" : "Cra 19 A Este"
+}, {
+  "username" : "user3",
+  "password" : "password1",
+  "address" : "Cra 19 A Este"
+}, {
+  "username" : "user4",
+  "password" : "password1",
+  "address" : "Cra 19 A Este"
+}, {
+  "username" : "daniel",
+  "password" : "p1",
+  "address" : ""
+}, {
+  "username" : "pedro",
+  "password" : "password",
+  "address" : "Carera 19 N 17"
+}, {
+  "username" : "nuevo",
+  "password" : "nuevo",
+  "address" : ""
+}, {
+  "username" : "dantan",
+  "password" : "contraseña",
+  "address" : ""
+} ]
