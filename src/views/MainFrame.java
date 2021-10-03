@@ -25,6 +25,10 @@ public class MainFrame extends JFrame{
 	private ConfirmPurchaseDialog cpd;
 	private ContainerBillPanel cbp;
 	private ProfilePanel pp;
+	private SettingsPanel sp;
+	private ChangeUserDataDialog cudd;
+	private SuggestionsDialog sd;
+	private HelpDialog helpDialog;
 	
 	private JScrollPane scroll;
 	
@@ -33,6 +37,7 @@ public class MainFrame extends JFrame{
 	public MainFrame(String[][] products, ActionListener actionListener, WindowListener windowListener) {
 		super("The MaxApp");
 		this.setSize(310, 550); 
+		
 		
 		this.initComponents(products, actionListener);
 		this.initRegistrationPanel();
@@ -53,6 +58,7 @@ public class MainFrame extends JFrame{
 		cbp = new ContainerBillPanel();
 		cpd = new ConfirmPurchaseDialog(actionListener);
 		pp = new ProfilePanel(actionListener);
+		sp = new SettingsPanel(actionListener);
 		
 		this.addPanelsToList();
 	}
@@ -180,6 +186,58 @@ public class MainFrame extends JFrame{
 		}
 	}
 	
+	public void changeSettinsMenu() {
+		this.removePanels();
+		tp.setMessages("Settings", "");
+		this.add(tp, BorderLayout.NORTH);
+		this.add(sp, BorderLayout.CENTER);
+		
+	}
+	
+	public void createCangeUserDatadialog(String newData, String confirmNewData, String typeData, ActionListener actionListener) {
+		cudd = new ChangeUserDataDialog(newData, confirmNewData, typeData, actionListener);
+	}
+	
+	public String getNewDataText() {
+		return cudd.getNewDataText();
+	}
+	
+	public String getConfirmNewDataText() {
+		return cudd.getConfirmNewDataText();
+	}
+	
+	public void closeChangeUserDataDialog() {
+		cudd.closeDialog();
+	}
+	
+	public void modifyErrorMatchDataLabel(boolean isVisible) {
+		cudd.modifyErrorMatchDataLabel(isVisible);
+	}
+	
+	public void modifyErrorUserExistLabel(boolean isVisible) {
+		cudd.modifyErrorUserExistLabel(isVisible);
+	}
+	
+	public void modifyUserAddedLabel(boolean isVisible){
+		cudd.modifyUserAddedLabel(isVisible);
+	}
+	
+	public void createSuggestionsDialog(ActionListener actionListener) {
+		sd = new SuggestionsDialog(actionListener);
+	}
+	
+	public void closeSuggestionsDialog() {
+		sd.closeDialog();
+	}
+	
+	public void createHelpDialog(ActionListener actionListener) {
+		helpDialog = new HelpDialog(actionListener);
+	}
+	
+	public void closeHelpDialog() {
+		helpDialog.closeDialog();
+	}
+	
 	public void modifyVisibilityLabel(boolean isVisible) {
 		rp.modifyVisibilityErrorLabel(isVisible);
 	}
@@ -199,6 +257,7 @@ public class MainFrame extends JFrame{
 		listOfComponents.add(tp);
 		listOfComponents.add(cbp);
 		listOfComponents.add(pp);
+		listOfComponents.add(sp);
 	}
 	
 	private void removePanels() {

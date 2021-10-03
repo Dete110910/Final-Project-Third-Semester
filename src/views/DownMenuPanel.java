@@ -13,6 +13,8 @@ import utilities.views.Utilities;
 
 public class DownMenuPanel extends JPanel{
 
+	private static final long serialVersionUID = 1L;
+	
 	private JButton homeButton, searchButton, billButton, profileButton;
 	
 	public DownMenuPanel(ActionListener actionListener) {

@@ -27,6 +27,7 @@ public class WriterProducts {
 				jsonGenerator.writeStringField("type", product.getType());
 				jsonGenerator.writeStringField("name", product.getName());
 				jsonGenerator.writeNumberField("price", product.getPrice());
+				jsonGenerator.writeStringField("filePathImage", product.getFilePathImage());
 				
 				jsonGenerator.writeEndObject();
 			}

@@ -23,16 +23,16 @@ public class ProductPanel extends JPanel{
 	
 	String[] numbers = {"0","1","2","3","4","5","6","7","8","9","10"};
 	
-	public ProductPanel(String type, String name, double price, ActionListener actionListener){
+	public ProductPanel(String type, String name, double price, String image, ActionListener actionListener){
 		typeProduct = type;
 		this.setLayout(new GridBagLayout());
 		this.setBackground(new Color(20,20,20));
 		this.setBorder(BorderFactory.createLineBorder(Color.gray));
-		this.initComponents(name, price, actionListener);
+		this.initComponents(name, price, image, actionListener);
 		this.setVisible(true);
 	}
 	
-	private void initComponents(String name, double price, ActionListener actionListener) {
+	private void initComponents(String name, double price, String image,ActionListener actionListener) {
 		productPicLabel = new JLabel();
 		productNameLabel = new JLabel(name);
 		productPriceLabel = new JLabel("$" + String.valueOf(price));
@@ -41,13 +41,13 @@ public class ProductPanel extends JPanel{
 		quantityProductsComboBox.addActionListener(actionListener);
 		quantityProductsComboBox.setActionCommand("isItemSelected");
 		
-		this.setImages();
+		this.setImages(image);
 		this.setFeaturesComponents();
 		this.setPositions();
 	}
 	
-	private void setImages() {
-		Utilities.setImageLabel("data/images/OreoImage.png", productPicLabel, 70, 75);
+	private void setImages(String image) {
+		Utilities.setImageLabel(image, productPicLabel, 70, 75);
 	}
 	
 	private void setFeaturesComponents() {

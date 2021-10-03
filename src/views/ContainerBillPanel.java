@@ -46,7 +46,7 @@ public class ContainerBillPanel extends JPanel{
 	public void showBillPanels() {
 		int positionPanels = 1;
 		for(int i = 0; i < listOfBills.size(); i++) {
-			Utilities.setPositionInGridBagLayout(this, listOfBills.get(i), 0, positionPanels++, 1, 1, 1, 1, "HORIZONTAL", 11, getInsets());
+			Utilities.setPositionInGridBagLayout(this, listOfBills.get(i), 0, positionPanels++, 1, 1, 1, 1, "HORIZONTAL", 11, null);
 		}
 	}
 	

@@ -19,17 +19,17 @@ public class Warehouse {
 		}
 		String[][] productsAsArray = this.converToArray(listOfProductsByType);
 		
-		
 		return productsAsArray;
 	}
 	
 	public String[] searchProduct(String productToSearch) {
-		String[] product = new String[3];
+		String[] product = new String[4];
 		for(int i = 0; i < listOfProducts.size(); i++) {
 			if(listOfProducts.get(i).getName().equals(productToSearch)) {
 				product[0] = listOfProducts.get(i).getType();
 				product[1] = listOfProducts.get(i).getName();
 				product[2] = String.valueOf(listOfProducts.get(i).getPrice());
+				product[3] = listOfProducts.get(i).getFilePathImage();
 			}
 		}
 		return product;
@@ -50,10 +50,6 @@ public class Warehouse {
 				}
 			}
 		}
-//		System.out.println(listOfThreeFirstProducts.size() + " a");
-//		for(int i = 0; i < listOfThreeFirstProducts.size(); i++) {
-//			System.out.println(listOfThreeFirstProducts.get(i));
-//		}
 		String[][] threeFirstProducts = this.converToArray(listOfThreeFirstProducts);
 		return threeFirstProducts;
 	}
@@ -71,14 +67,14 @@ public class Warehouse {
 	}
 
 	private String[][] converToArray(ArrayList<Product> listOfProducts){
-		String[][] productsAsArray = new String[listOfProducts.size()][3];
 		
+		String[][] productsAsArray = new String[listOfProducts.size()][4];
 		for(int i = 0; i < listOfProducts.size(); i++) {
 			productsAsArray[i][0] = listOfProducts.get(i).getType();
 			productsAsArray[i][1] = listOfProducts.get(i).getName();
 			productsAsArray[i][2] = String.valueOf(listOfProducts.get(i).getPrice());
+			productsAsArray[i][3] = listOfProducts.get(i).getFilePathImage();
 		}
-		
 		return productsAsArray;
 		
 	}

@@ -73,8 +73,8 @@ public class SingUpDialog extends JDialog{
 		Utilities.setPositionInGridBagLayoutJDialog(this, newPassword, 1, 2, 1, 1, 1, 1, "NONE", 10);
 		Utilities.setPositionInGridBagLayoutJDialog(this, confirmNewPassword, 1, 3, 1, 1, 1, 1, "NONE", 10);
 		Utilities.setPositionInGridBagLayoutJDialog(this, errorMatchPassword, 1, 4, 1, 1, 1, 1, "NONE", 10);
-		Utilities.setPositionInGridBagLayoutJDialog(this, errorUserExist, 1, 5, 1, 1, 1, 1, "NONE", 10);
-		Utilities.setPositionInGridBagLayoutJDialog(this, userAdded, 1, 6, 1, 1, 1, 1, "NONE", 10);
+		Utilities.setPositionInGridBagLayoutJDialog(this, errorUserExist, 1, 4, 1, 1, 1, 1, "NONE", 10);
+		Utilities.setPositionInGridBagLayoutJDialog(this, userAdded, 1, 4, 1, 1, 1, 1, "NONE", 10);
 		Utilities.setPositionInGridBagLayoutJDialog(this, doneButton, 1, 7, 1, 1, 1, 1, "NONE", 10);
 	}
 	

@@ -1,7 +1,7 @@
 package views;
 
 import java.awt.Color;
-import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -13,11 +13,11 @@ public class ProfilePanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	
-	private JButton settingsButton, suggestionsButton, helpButton;
+	private JButton settingsButton, suggestionsButton, helpButton, exitButton;
 	
 	public ProfilePanel(ActionListener actionListener) {
 		this.setSize(316,500);
-		this.setLayout(new GridBagLayout());
+		this.setLayout(new GridLayout(10,1));
 		this.setBackground(new Color(47,47,47));
 		this.initComponents(actionListener);
 		this.setVisible(true);
@@ -27,19 +27,25 @@ public class ProfilePanel extends JPanel{
 		settingsButton = new JButton("Settings");
 		suggestionsButton = new JButton("Suggestions");
 		helpButton = new JButton("Help");
+		exitButton = new JButton("Exit");
 		
 		this.setFeaturesComponents();
-		this.setCommands(actionListener);
+		this.setCommandsAndListeners(actionListener);
 		this.addComponents();
 	}
 	
 	private void setFeaturesComponents() {
-		Utilities.setBackgroundAndForeGround(settingsButton, new Color(47,47,47), Color.white);
-		Utilities.setBackgroundAndForeGround(suggestionsButton, new Color(47,47,47), Color.white);
-		Utilities.setBackgroundAndForeGround(helpButton, new Color(47,47,47), Color.white);
+		Utilities.setBackgroundAndForeGround(settingsButton, new Color(42,42,42), Color.white);
+		Utilities.setBackgroundAndForeGround(suggestionsButton, new Color(42,42,42), Color.white);
+		Utilities.setBackgroundAndForeGround(helpButton, new Color(42,42,42), Color.white);
+		Utilities.setBackgroundAndForeGround(exitButton, getBackground(), Color.white);
+		settingsButton.setBorderPainted(false);
+		suggestionsButton.setBorderPainted(false);
+		helpButton.setBorderPainted(false);
+		exitButton.setBorderPainted(false);
 	}
 	
-	private void setCommands(ActionListener actionListener) {
+	private void setCommandsAndListeners(ActionListener actionListener) {
 		settingsButton.setActionCommand("settings");
 		settingsButton.addActionListener(actionListener);
 		
@@ -48,12 +54,16 @@ public class ProfilePanel extends JPanel{
 		
 		helpButton.setActionCommand("help");
 		helpButton.addActionListener(actionListener);
+		
+		exitButton.setActionCommand("exit");
+		exitButton.addActionListener(actionListener);
 	}
 	
 	private void addComponents() {
-		Utilities.setPositionInGridBagLayout(this, settingsButton, 0, 0, 1, 1, 1, 0, "HORIZONTAL", 18, getInsets());
-		Utilities.setPositionInGridBagLayout(this, suggestionsButton, 0, 1, 1, 1, 1, 0, "HORIZONTAL", 18, getInsets());
-		Utilities.setPositionInGridBagLayout(this, helpButton, 0, 2, 1, 1, 1, 0, "HORIZONTAL", 18, getInsets());
+		this.add(settingsButton);
+		this.add(suggestionsButton);
+		this.add(helpButton);
+		this.add(exitButton);
 	}
 	
 }

@@ -100,13 +100,53 @@ public class PresenterAppGUI implements ActionListener, WindowListener{
 				break;
 				
 				case "settings":
+					this.actionSettings();
 				break;
 				
 				case "suggestions":
+					this.actionSuggestions();
+				break;
+				
+				case "doneSuggestion":
+					this.actionDoneSuggestion();
 				break;
 				
 				case "help":
+					this.actionHelp();
 				break;
+				
+				case "doneHelpButton":
+					this.actionDoneHelp();
+				break;
+				
+				case "exit":
+					this.actionExit();
+				break;
+				
+				case "changeUserName":
+					this.actionChangeUserName();
+				break;
+				
+				case "usernameData":
+					this.actionChangeUserNameData();
+				break;
+				
+				case "changePassword":
+					this.actionChangePassword();
+				break;
+				
+				case "passwordData":
+					this.actionChangePasswordData();
+				break;
+				
+				case "changeAddress":
+					this.actionChangeAddress();
+				break;
+				
+				case "addressData":
+					this.actionChangeAddressdata();
+				break;
+				
 		}
 	}
 	
@@ -161,7 +201,7 @@ public class PresenterAppGUI implements ActionListener, WindowListener{
 		String[] product = wh.searchProduct(mf.getProductToSearch());
 		if(product[0] != null) {
 			mf.removeProductPanel();
-			ProductPanel pp = new ProductPanel(product[0], product[1], Double.parseDouble(product[2]), this);
+			ProductPanel pp = new ProductPanel(product[0], product[1], Double.parseDouble(product[2]), product[3], this);
 			pp.modifyVisibilityOfComboBox(false);
 			mf.addProductPanel(pp, product[0]);
 		}
@@ -194,6 +234,79 @@ public class PresenterAppGUI implements ActionListener, WindowListener{
 		mf.modifyVisibilityConfirmPurchaseDialog(false);
 	}
 	
+	private void actionSettings() {
+		mf.changeSettinsMenu();
+	}
+	
+	private void actionSuggestions() {
+		mf.createSuggestionsDialog(this);
+	}
+	
+	private void actionDoneSuggestion() {
+		mf.closeSuggestionsDialog();
+	}
+	
+	private void actionHelp() {
+		mf.createHelpDialog(this);
+	}
+	
+	private void actionDoneHelp() {
+		mf.closeHelpDialog();
+	}
+	
+	private void actionExit() {
+		WriterProducts.saveProducts(wh.getListOfProducts(), "data/files/products.json");
+		fmu.saveUsers(um.getListOfUsers(), "data/files/users.json");
+		mf.dispose();
+	}
+	
+	private void actionChangeUserName() {
+		mf.createCangeUserDatadialog("New user", "Confirm new user", "usernameData", this);
+	}
+	
+	private void actionChangeUserNameData() {
+		if(!um.determineUserExistence(mf.getNewDataText()) && mf.getNewDataText().equals(mf.getConfirmNewDataText()) && !mf.getNewDataText().equals("")) {
+			um.changeUsername(user, mf.getNewDataText());
+			mf.closeChangeUserDataDialog();
+		}
+		else if(um.determineUserExistence(mf.getNewDataText())){
+			mf.modifyErrorMatchDataLabel(false);
+			mf.modifyErrorUserExistLabel(true);
+		}
+		else if(!mf.getNewDataText().equals(mf.getConfirmNewDataText())){
+			mf.modifyErrorMatchDataLabel(true);
+			mf.modifyErrorUserExistLabel(false);
+		}
+	}
+	
+	private void actionChangePassword() {
+		mf.createCangeUserDatadialog("New password", "Confirm new password", "passwordData", this);
+		
+	}
+	
+	private void actionChangePasswordData() {
+		if(!mf.getNewDataText().equals("") && mf.getNewDataText().equals(mf.getConfirmNewDataText())){
+			um.changePassword(user, mf.getNewDataText());
+			mf.closeChangeUserDataDialog();
+		}
+		else if(!mf.getNewDataText().equals(mf.getConfirmNewDataText())){
+			mf.modifyErrorMatchDataLabel(true);
+		}
+	}
+	
+	private void actionChangeAddress() {
+		mf.createCangeUserDatadialog("New address", "Confirm new address", "addressData", this);
+	}
+	
+	private void actionChangeAddressdata() {
+		if(!mf.getNewDataText().equals("") && mf.getNewDataText().equals(mf.getConfirmNewDataText())){
+			um.changeAddress(user, mf.getNewDataText());
+			mf.closeChangeUserDataDialog();
+		}
+		else {
+			mf.modifyErrorMatchDataLabel(true);
+		}
+	}
 	
 	private void actionBillButton() {
 		this.updateIcons("data/icons/billsIconOn.png", "bill");

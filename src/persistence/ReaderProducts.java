@@ -35,6 +35,7 @@ public class ReaderProducts {
 		String type = "";
 		String name = "";
 		double price = 0;
+		String filePathImage = "";
 		
 		while(jsonParser.nextToken() != JsonToken.END_ARRAY) {
 			String auxString = jsonParser.getText();
@@ -51,7 +52,12 @@ public class ReaderProducts {
 				jsonParser.nextToken();
 				price = jsonParser.getDoubleValue();
 				
-				listOfProducts.add(new Product(type, name, price));
+			}
+			else if(auxString.equals("filePathImage")) {
+				jsonParser.nextToken();
+				filePathImage = jsonParser.getText();
+				
+				listOfProducts.add(new Product(type, name, price, filePathImage));
 			}
 		}
 		

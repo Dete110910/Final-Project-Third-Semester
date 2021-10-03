@@ -31,18 +31,19 @@ public class HomePanel extends JPanel{
 	
 	private void addComponents() {
 		for(int i = 0; i < listOfSampleProducPanel.size(); i++) {
-			Utilities.setPositionInGridBagLayout(this,listOfSampleProducPanel.get(i), 0, i, 1, 1, 1, 1, "BOTH", 10, null);
+			Utilities.setPositionInGridBagLayout(this, listOfSampleProducPanel.get(i), 0, i, 1, 1, 1, 1, "BOTH", 10, null);
 		}
 	}
 	
 	private String[][] copySubMatrix(String[][] mainMatrix, int valueI){
-		String[][] matrixThreeProducts = new String[3][3];
+		String[][] matrixThreeProducts = new String[3][4];
 		for(int i = 0; i < matrixThreeProducts.length; i++) {
-			for(int j = 0; j < matrixThreeProducts.length; j++) {
+			for(int j = 0; j < matrixThreeProducts[i].length; j++) {
 				matrixThreeProducts[i][j] = mainMatrix[valueI][j];
 			}
 			valueI++;
 		}
+		
 		return matrixThreeProducts;
 	}
 	

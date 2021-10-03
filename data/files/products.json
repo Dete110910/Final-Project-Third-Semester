@@ -1,53 +1,66 @@
 [ {
   "type" : "Food",
   "name" : "Oreo",
-  "price" : 500.0
+  "price" : 500.0,
+  "filePathImage" : "data/images/OreoImage.png"
 }, {
   "type" : "Food",
   "name" : "Doritos",
-  "price" : 5000.0
+  "price" : 5000.0,
+  "filePathImage" : "data/images/DoritosImage.png"
 }, {
   "type" : "Food",
   "name" : "Kik Kat",
-  "price" : 12000.0
+  "price" : 12000.0,
+  "filePathImage" : "data/images/KikKatImage.png"
 }, {
   "type" : "Food",
   "name" : "M&M",
-  "price" : 4000.0
+  "price" : 4000.0,
+  "filePathImage" : "data/images/M&MImage.png"
 }, {
   "type" : "Food",
   "name" : "TickTack",
-  "price" : 10000.0
+  "price" : 10000.0,
+  "filePathImage" : "data/images/TickTackImage.png"
 }, {
   "type" : "Drinks",
   "name" : "HIT Juice",
-  "price" : 1500.0
+  "price" : 1500.0,
+  "filePathImage" : "data/images/HITJuiceImage.png"
 }, {
   "type" : "Drinks",
   "name" : "Coca Cola",
-  "price" : 4000.0
+  "price" : 4000.0,
+  "filePathImage" : "data/images/CocaColaImage.png"
 }, {
   "type" : "Drinks",
   "name" : "Pepsi",
-  "price" : 2000.0
+  "price" : 2000.0,
+  "filePathImage" : "data/images/PepsiImage.png"
 }, {
   "type" : "Drinks",
   "name" : "Vodka",
-  "price" : 100000.0
+  "price" : 100000.0,
+  "filePathImage" : "data/images/VodkaImage.png"
 }, {
   "type" : "Cleaning products",
-  "name" : "Body Soap",
-  "price" : 2000.0
+  "name" : "Protex",
+  "price" : 2000.0,
+  "filePathImage" : "data/images/ProtexImage.png"
 }, {
   "type" : "Cleaning products",
   "name" : "Shampoo H&S",
-  "price" : 15000.0
+  "price" : 15000.0,
+  "filePathImage" : "data/images/ShampooH&SImage.png"
 }, {
   "type" : "Cleaning products",
-  "name" : "Toothpaste",
-  "price" : 4000.0
+  "name" : "Colgate Toothpaste",
+  "price" : 4000.0,
+  "filePathImage" : "data/images/ColgateImage.png"
 }, {
   "type" : "Cleaning products",
   "name" : "Clorox",
-  "price" : 5000.0
+  "price" : 5000.0,
+  "filePathImage" : "data/images/CloroxImage.png"
 } ]

@@ -1,11 +1,11 @@
 [ {
   "username" : "u",
   "password" : "u",
-  "address" : "Cra 19 A Este"
+  "address" : "Carrera 12"
 }, {
   "username" : "user1",
   "password" : "password1",
-  "address" : "Cra 19 A Este"
+  "address" : "Cra 20 Sur"
 }, {
   "username" : "user2",
   "password" : "password1",
@@ -33,5 +33,9 @@
 }, {
   "username" : "dantan",
   "password" : "contraseña",
+  "address" : ""
+}, {
+  "username" : "prueba",
+  "password" : "p",
   "address" : ""
 } ]

@@ -37,9 +37,9 @@ public class SampleProductPanel extends JPanel{
 		typeProductButton.addActionListener(actionListener);
 		
 		
-		firstProduct = new ProductPanel(products[0][0], products[0][1], Double.parseDouble(products[0][2]), actionListener);
-		secondProduct = new ProductPanel(products[1][0], products[1][1], Double.parseDouble(products[1][2]), actionListener);
-		thirdProduct = new ProductPanel(products[2][0], products[2][1], Double.parseDouble(products[2][2]), actionListener);
+		firstProduct = new ProductPanel(products[0][0], products[0][1], Double.parseDouble(products[0][2]), products[0][3],actionListener);
+		secondProduct = new ProductPanel(products[1][0], products[1][1], Double.parseDouble(products[1][2]), products[1][3],actionListener);
+		thirdProduct = new ProductPanel(products[2][0], products[2][1], Double.parseDouble(products[2][2]), products[2][3], actionListener);
 		
 		this.setFeatureOfComponents();
 		this.modifyVisibilityComponents();

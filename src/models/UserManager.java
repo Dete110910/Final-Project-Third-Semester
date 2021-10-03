@@ -41,6 +41,30 @@ public class UserManager {
 		listOfUsers.add(new User(username, password, address));
 	}
 	
+	public void changeUsername(String oldUsername, String newUsername) {
+		for(int i = 0; i < listOfUsers.size(); i++) {
+			if(listOfUsers.get(i).getUsername().equals(oldUsername)) {
+				listOfUsers.get(i).setUsername(newUsername);
+			}
+		}
+	}
+	
+	public void changePassword(String username, String newPassword) {
+		for(int i = 0; i < listOfUsers.size(); i++) {
+			if(listOfUsers.get(i).getUsername().equals(username)) {
+				listOfUsers.get(i).setPassword(newPassword);
+			}
+		}
+	}
+	
+	public void changeAddress(String username, String newAddress) {
+		for(int i = 0; i < listOfUsers.size(); i++) {
+			if(listOfUsers.get(i).getUsername().equals(username)) {
+				listOfUsers.get(i).setAddress(newAddress);
+			}
+		}
+	}
+	
 	public ArrayList<User> getListOfUsers(){
 		return this.listOfUsers;
 	}

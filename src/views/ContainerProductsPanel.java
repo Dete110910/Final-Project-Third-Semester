@@ -32,7 +32,7 @@ public class ContainerProductsPanel extends JPanel{
 		listOfProductsPanel = new ArrayList<ProductPanel>();
 		int yPosition = 0;
 		for(int i = 0; i < products.length; i++) {
-			listOfProductsPanel.add(new ProductPanel(products[i][0], products[i][1], Double.parseDouble(products[i][2]), actionListener));
+			listOfProductsPanel.add(new ProductPanel(products[i][0], products[i][1], Double.parseDouble(products[i][2]), products[i][3],actionListener));
 			Utilities.setBackgroundAndForeGround(listOfProductsPanel.get(i), new Color(30,30,30), Color.white);
 			Utilities.setPositionInGridBagLayout(this, listOfProductsPanel.get(i), 0, yPosition++, 1, 1, 1, 1, "HORIZONTAL", 10, getInsets());
 		}

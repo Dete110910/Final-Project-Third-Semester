@@ -5,12 +5,14 @@ public class Product {
 	private String type;
 	private String name;
 	private double price;
+	private String filePathImage;
 	
 	
-	public Product(String type, String name, double price) {
+	public Product(String type, String name, double price, String filePathImage) {
 		this.type = type;
 		this.name = name;
 		this.price = price;
+		this.filePathImage = filePathImage;
 	}
 
 	public String getType() {
@@ -31,10 +33,20 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
+	public String getFilePathImage() {
+		return filePathImage;
+	}
+
+	public void setFilePathImage(String filePathImage) {
+		this.filePathImage = filePathImage;
+	}
 
 	@Override
 	public String toString() {
-		return "Product [type=" + type + ", name=" + name + ", price=" + price + "]";
+		return "Product [type=" + type + ", name=" + name + ", price=" + price + ", filePathImage=" + filePathImage
+				+ "]";
 	}
+	
+
 }

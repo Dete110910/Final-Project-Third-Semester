@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Color;
 import java.awt.GridBagLayout;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 
 import utilities.views.Utilities;
 
@@ -20,7 +22,7 @@ public class BillPanel extends JPanel{
 	public BillPanel(ArrayList<ArrayList<String>> productsToGenerateBill) {
 		this.setSize(316, 300);
 		this.setLayout(new GridBagLayout());
-		this.setBorder(BorderFactory.createTitledBorder("Date: " + LocalDate.now()));
+		this.setBackground(new Color(27,27,27));
 		this.initComponents(productsToGenerateBill);
 		this.setVisible(true);
 	}
@@ -43,6 +45,7 @@ public class BillPanel extends JPanel{
 		
 		totalValueLabel.setText("$ " + String.valueOf(totalValue));
 		Utilities.setPositionInGridBagLayout(this, totalValueLabel, 0, productsToGenerateBill.size(), 1, 1, 1, 1, "NONE", 13, getInsets());
+		this.setFeaturesComponents();
 	}
 	
 	private double valueTotalProduct(String amount, String value) {
@@ -50,5 +53,16 @@ public class BillPanel extends JPanel{
 		double doubleAmount = Double.parseDouble(amount);
 		return doubleValue * doubleAmount;
 	}
+	
+	private void setFeaturesComponents() {
+		TitledBorder titleBorder = BorderFactory.createTitledBorder("Date: " + LocalDate.now());
+		titleBorder.setTitleColor(Color.white);
+		this.setBorder(titleBorder);
+		for(int i = 0; i < listOfProducts.size(); i++) {
+			Utilities.setBackgroundAndForeGround(listOfProducts.get(i), getBackground(), Color.white);
+		}
+		Utilities.setBackgroundAndForeGround(totalValueLabel, getBackground(), Color.white);
+	}
+	
 	
 }

@@ -1,5 +1,7 @@
 package views;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 
@@ -17,8 +19,9 @@ public class ConfirmPurchaseDialog extends JDialog{
 		private JButton doneButton;
 		
 		public ConfirmPurchaseDialog(ActionListener actionListener) {
-			this.setSize(250, 200);
+			this.setSize(310, 200);
 			this.setLayout(new GridBagLayout());
+			this.setBackground(Color.black);
 			this.initComponents(actionListener);
 			this.setVisible(false);
 		}
@@ -30,7 +33,15 @@ public class ConfirmPurchaseDialog extends JDialog{
 			doneButton.setActionCommand("closeDialogConfirmPurchase");
 			doneButton.addActionListener(actionListener);
 			
+			this.setFeaturesComponents();
 			this.setPositions();
+		}
+		
+		private void setFeaturesComponents() {
+			confirmPurchase.setFont(new Font("Cooper Black", 0, 12));
+			confirmPurchase.setForeground(Color.red);
+			confirmPurchase.setBackground(Color.black);
+			doneButton.setFont(new Font("Cooper Black", 0, 15));
 		}
 		
 		private void setPositions() {
